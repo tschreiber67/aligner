@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-planner",
+  "version": "1.0.0",
+  "description": "Portfolio planner: total-return series from frozen public data, portfolio simulator and rolling-window lookback",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "data:verify": "node scripts/verify-data.js"
+  }
+}

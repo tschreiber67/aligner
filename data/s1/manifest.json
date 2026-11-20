@@ -1,0 +1,382 @@
+{
+  "pack": "portfolio-s1",
+  "session": 1,
+  "purpose": "Baseline planner: SPY / QQQ / bond funds, dividend reinvestment, cash reallocation; lookback and P(objective by horizon).",
+  "format": "gzip-compressed CSV, header row, ISO dates, UTC",
+  "files": [
+    {
+      "path": "etf/AGG.daily.csv.gz",
+      "source": "nasdaq",
+      "url": "https://api.nasdaq.com/api/quote/AGG/historical",
+      "license": "Nasdaq.com public quote data (user-approved source)",
+      "note": null,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "rows": 2513,
+      "first": "2016-11-09",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 37456,
+      "sha256": "dadec83394ae5e52c631fa1915f4d48707101345ffd153e6a3fd0855f1da3ea1"
+    },
+    {
+      "path": "etf/AGG.distributions.csv.gz",
+      "source": "yahoo",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/AGG",
+      "license": "user-approved: issuer-declared distributions (ex-date, amount per share), retrieved via Yahoo",
+      "note": null,
+      "columns": [
+        "date",
+        "amount"
+      ],
+      "rows": 276,
+      "first": "2003-11-03",
+      "last": "2026-10-01",
+      "retrieved": "2026-11-10",
+      "bytes": 1228,
+      "sha256": "b0b812a5e9286daa3df77d5c92a9c3afe0224ccce629f67c82f09f96f447c6eb"
+    },
+    {
+      "path": "etf/BND.daily.csv.gz",
+      "source": "nasdaq",
+      "url": "https://api.nasdaq.com/api/quote/BND/historical",
+      "license": "Nasdaq.com public quote data (user-approved source)",
+      "note": null,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "rows": 2513,
+      "first": "2016-11-09",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 36269,
+      "sha256": "1131fc803b0646bb0475e8416943561e2668062bacb2b0b05572b4498d0752a7"
+    },
+    {
+      "path": "etf/BND.distributions.csv.gz",
+      "source": "yahoo",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/BND",
+      "license": "user-approved: issuer-declared distributions (ex-date, amount per share), retrieved via Yahoo",
+      "note": null,
+      "columns": [
+        "date",
+        "amount"
+      ],
+      "rows": 232,
+      "first": "2007-05-01",
+      "last": "2026-10-01",
+      "retrieved": "2026-11-10",
+      "bytes": 1030,
+      "sha256": "93ec14bcca99c6e91becbbf3cc4431183b6c38205e43f248b33ff97b1d30e07d"
+    },
+    {
+      "path": "etf/IEF.daily.csv.gz",
+      "source": "nasdaq",
+      "url": "https://api.nasdaq.com/api/quote/IEF/historical",
+      "license": "Nasdaq.com public quote data (user-approved source)",
+      "note": null,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "rows": 2513,
+      "first": "2016-11-09",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 38497,
+      "sha256": "50010f0a2da5fbb8eef3c1aeb5583c180c149b5d1658e1c5ea84ab91421a9086"
+    },
+    {
+      "path": "etf/IEF.distributions.csv.gz",
+      "source": "yahoo",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/IEF",
+      "license": "user-approved: issuer-declared distributions (ex-date, amount per share), retrieved via Yahoo",
+      "note": null,
+      "columns": [
+        "date",
+        "amount"
+      ],
+      "rows": 291,
+      "first": "2002-09-03",
+      "last": "2026-10-01",
+      "retrieved": "2026-11-10",
+      "bytes": 1291,
+      "sha256": "185d63693f82108e2573f8f4cbb0b0c6810120d144d1e42c160e94aa869a429c"
+    },
+    {
+      "path": "etf/QQQ.daily.csv.gz",
+      "source": "nasdaq",
+      "url": "https://api.nasdaq.com/api/quote/QQQ/historical",
+      "license": "Nasdaq.com public quote data (user-approved source)",
+      "note": null,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "rows": 2513,
+      "first": "2016-11-09",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 44639,
+      "sha256": "481b2614486fa6af85a5587727eb879964ec086ed77f1e659a07f6dbde6c2785"
+    },
+    {
+      "path": "etf/QQQ.distributions.csv.gz",
+      "source": "yahoo",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ",
+      "license": "user-approved: issuer-declared distributions (ex-date, amount per share), retrieved via Yahoo",
+      "note": null,
+      "columns": [
+        "date",
+        "amount"
+      ],
+      "rows": 90,
+      "first": "2003-12-24",
+      "last": "2026-09-21",
+      "retrieved": "2026-11-10",
+      "bytes": 518,
+      "sha256": "f78aae01bcd095d6dc29dc938f5f4b2160f04d234a58748de73f787ee7150d09"
+    },
+    {
+      "path": "etf/SHY.daily.csv.gz",
+      "source": "nasdaq",
+      "url": "https://api.nasdaq.com/api/quote/SHY/historical",
+      "license": "Nasdaq.com public quote data (user-approved source)",
+      "note": null,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "rows": 2513,
+      "first": "2016-11-09",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 31597,
+      "sha256": "31af88d93679dbf3db5d7ac746458630e2ae9dedbbd44626ce7b334ad8ba67da"
+    },
+    {
+      "path": "etf/SHY.distributions.csv.gz",
+      "source": "yahoo",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SHY",
+      "license": "user-approved: issuer-declared distributions (ex-date, amount per share), retrieved via Yahoo",
+      "note": null,
+      "columns": [
+        "date",
+        "amount"
+      ],
+      "rows": 290,
+      "first": "2002-09-03",
+      "last": "2026-10-01",
+      "retrieved": "2026-11-10",
+      "bytes": 1268,
+      "sha256": "9010c7deef206f81396b72655dc3f88fd44019f556cba048c29a0d4d24072168"
+    },
+    {
+      "path": "etf/SPY.daily.csv.gz",
+      "source": "nasdaq",
+      "url": "https://api.nasdaq.com/api/quote/SPY/historical",
+      "license": "Nasdaq.com public quote data (user-approved source)",
+      "note": null,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "rows": 2513,
+      "first": "2016-11-09",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 44685,
+      "sha256": "087544e3ebb86d775c25b41aec531ef0a8bab45b1e42062078ecc65bd1562569"
+    },
+    {
+      "path": "etf/SPY.distributions.csv.gz",
+      "source": "yahoo",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY",
+      "license": "user-approved: issuer-declared distributions (ex-date, amount per share), retrieved via Yahoo",
+      "note": null,
+      "columns": [
+        "date",
+        "amount"
+      ],
+      "rows": 136,
+      "first": "1993-03-19",
+      "last": "2026-09-18",
+      "retrieved": "2026-11-10",
+      "bytes": 727,
+      "sha256": "f6f76154437a31880e6d973d17788454fb98bd920ccfbb4c177550e6050f4f5a"
+    },
+    {
+      "path": "etf/TLT.daily.csv.gz",
+      "source": "nasdaq",
+      "url": "https://api.nasdaq.com/api/quote/TLT/historical",
+      "license": "Nasdaq.com public quote data (user-approved source)",
+      "note": null,
+      "columns": [
+        "date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "rows": 2513,
+      "first": "2016-11-09",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 40432,
+      "sha256": "16d604ef3a7e26057d877efec4e455aa2827520625f66e82d9ffb0e768f21d7b"
+    },
+    {
+      "path": "etf/TLT.distributions.csv.gz",
+      "source": "yahoo",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/TLT",
+      "license": "user-approved: issuer-declared distributions (ex-date, amount per share), retrieved via Yahoo",
+      "note": null,
+      "columns": [
+        "date",
+        "amount"
+      ],
+      "rows": 289,
+      "first": "2002-09-03",
+      "last": "2026-10-01",
+      "retrieved": "2026-11-10",
+      "bytes": 1257,
+      "sha256": "0adaefd18cab3286f99d34781ea6968981830b6bee8ae5c844d2ba7b3ce85fef"
+    },
+    {
+      "path": "long/shiller-sp500.monthly.csv.gz",
+      "source": "datahub",
+      "url": "https://raw.githubusercontent.com/datasets/s-and-p-500/main/data/data.csv",
+      "license": "ODC-PDDL-1.0",
+      "note": "Shiller monthly S&P composite: price, dividend, earnings, CPI, long rate (1871-)",
+      "columns": [
+        "Date",
+        "SP500",
+        "Dividend",
+        "Earnings",
+        "Consumer Price Index",
+        "Long Interest Rate",
+        "Real Price",
+        "Real Dividend",
+        "Real Earnings",
+        "PE10"
+      ],
+      "rows": 1869,
+      "first": "1871-01-01",
+      "last": "2026-09-01",
+      "retrieved": "2026-11-10",
+      "bytes": 44091,
+      "sha256": "c136b9719b6c965812819483bf80d79a6bae9a37a8eb70a7b9538fcbdef6e1c0"
+    },
+    {
+      "path": "long/ust10y.monthly.csv.gz",
+      "source": "datahub",
+      "url": "https://raw.githubusercontent.com/datasets/bond-yields-us-10y/main/data/monthly.csv",
+      "license": "ODC-PDDL-1.0",
+      "note": "Federal Reserve H.15 10-year Treasury constant maturity, monthly (1953-)",
+      "columns": [
+        "Date",
+        "Rate"
+      ],
+      "rows": 882,
+      "first": "1953-04-01",
+      "last": "2026-09-01",
+      "retrieved": "2026-11-10",
+      "bytes": 3707,
+      "sha256": "fdfaa29a9cae35d700232992a07ff0dd83fe731842eaaf0a094948b0967e0002"
+    },
+    {
+      "path": "macro/cpi-u-nsa.monthly.csv.gz",
+      "source": "bls",
+      "url": "https://data.bls.gov/timeseries/CUUR0000SA0",
+      "license": "Public domain (U.S. Government work)",
+      "note": "CPI-U all items, not seasonally adjusted (1982-84=100)",
+      "columns": [
+        "date",
+        "value"
+      ],
+      "rows": 1365,
+      "first": "1913-01-01",
+      "last": "2026-10-01",
+      "retrieved": "2026-11-10",
+      "bytes": 5637,
+      "sha256": "84784f89b1bc48f3780b67310981636cff408ecf151e3afc0635f038a9b45217"
+    },
+    {
+      "path": "nav/SPY.nav.daily.csv.gz",
+      "source": "ssga",
+      "url": "https://www.ssga.com/library-content/products/fund-data/etfs/us/navhist-us-en-spy.xlsx",
+      "license": "Issuer-published fund NAV history (user-approved source)",
+      "note": null,
+      "columns": [
+        "date",
+        "nav",
+        "shares_outstanding",
+        "total_net_assets"
+      ],
+      "rows": 5775,
+      "first": "2003-12-01",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 99494,
+      "sha256": "587f1d4d51b6268b3a04c402b45985d60305029766cbd6cff1ad961f61481918"
+    },
+    {
+      "path": "rates/ust-par-yield-curve.daily.csv.gz",
+      "source": "treasury",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
+      "license": "Public domain (U.S. Government work)",
+      "note": "percent, par yields",
+      "columns": [
+        "date",
+        "1M",
+        "1.5M",
+        "2M",
+        "3M",
+        "4M",
+        "6M",
+        "1Y",
+        "2Y",
+        "3Y",
+        "5Y",
+        "7Y",
+        "10Y",
+        "20Y",
+        "30Y"
+      ],
+      "rows": 9221,
+      "first": "1990-01-02",
+      "last": "2026-11-09",
+      "retrieved": "2026-11-10",
+      "bytes": 148018,
+      "sha256": "0f4eafbadf45e5ba2046f7ee69e32e69d4bce3781e2af8870c62841b4b5bdae7"
+    }
+  ]
+}

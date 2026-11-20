@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio Planner</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; background: #f5f6f8; color: #1d2330; }
+  header { background: #1d3557; color: #fff; padding: 12px 20px; }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; font-size: 13px; opacity: .85; }
+  main { display: grid; grid-template-columns: 360px 1fr; gap: 16px; padding: 16px; }
+  section { background: #fff; border: 1px solid #dde1e7; border-radius: 6px; padding: 12px 14px; margin-bottom: 16px; }
+  h2 { font-size: 15px; margin: 0 0 8px; }
+  label { display: block; font-size: 13px; margin: 6px 0 2px; }
+  input, select { font: inherit; font-size: 13px; padding: 3px 5px; }
+  input[type=number] { width: 90px; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  th, td { border-bottom: 1px solid #e6e8ec; padding: 4px 6px; text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+  button { font: inherit; padding: 6px 14px; margin: 10px 6px 0 0; background: #1d3557; color: #fff; border: 0; border-radius: 4px; cursor: pointer; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .err { color: #b00020; font-size: 13px; min-height: 1em; }
+  .muted { color: #667; font-size: 12px; }
+  svg { width: 100%; height: 300px; background: #fbfcfd; border: 1px solid #e6e8ec; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Portfolio Planner</h1>
+  <p>Portfolio simulator and rolling-window lookback on frozen public data (ETFs from 2016-11, long-history proxies before that). Local only.</p>
+</header>
+<main>
+  <div>
+    <section>
+      <h2>Portfolio</h2>
+      <table id="weights"><thead><tr><th>Asset</th><th>Weight %</th><th>Expense %/yr</th></tr></thead><tbody></tbody></table>
+      <div class="row">
+        <div><label for="start">Start month</label><input id="start" value="2000-01" size="8"></div>
+        <div><label for="months">Horizon (months)</label><input id="months" type="number" value="240" min="1" max="1200"></div>
+      </div>
+      <div class="row">
+        <div><label for="startValue">Start value</label><input id="startValue" type="number" value="10000"></div>
+        <div><label for="contribution">Monthly contribution</label><input id="contribution" type="number" value="0"></div>
+      </div>
+      <div class="row">
+        <div><label for="freq">Rebalance</label><select id="freq"><option>annual</option><option>quarterly</option><option>none</option></select></div>
+        <div><label for="rebMonth">Rebalance month</label><input id="rebMonth" type="number" value="12" min="1" max="12"></div>
+      </div>
+      <div class="row">
+        <div><label for="cashTarget">Cash target % (at each rebalance)</label><input id="cashTarget" type="number" value="10" min="0" max="90"></div>
+        <div><label for="cashAsset">Cash earns</label><select id="cashAsset"><option value="CASH">3M T-bill</option><option value="NONE">0%</option></select></div>
+      </div>
+      <label><input id="drip" type="checkbox" checked> Reinvest distributions (DRIP)</label>
+      <label><input id="real" type="checkbox"> Inflation-adjusted (CPI)</label>
+      <div class="row">
+        <div><label for="from">Lookback from (start month, optional)</label><input id="from" size="8" placeholder="YYYY-MM"></div>
+      </div>
+      <button id="runSim">Simulate</button><button id="runLb">Lookback</button>
+      <div class="err" id="err"></div>
+    </section>
+    <section>
+      <h2>Data</h2>
+      <table id="assets"><thead><tr><th>Asset</th><th>From</th><th>Fund from</th><th>Splice corr</th><th>Track diff</th></tr></thead><tbody></tbody></table>
+      <p class="muted" id="packs"></p>
+    </section>
+  </div>
+  <div>
+    <section>
+      <h2>Value path</h2>
+      <svg id="chart" viewBox="0 0 800 300" preserveAspectRatio="none"></svg>
+      <p class="muted">Blue: portfolio value. Grey: cumulative money paid in.</p>
+    </section>
+    <section>
+      <h2>Simulation result</h2>
+      <table id="summary"><tbody><tr><td class="muted">Press Simulate.</td></tr></tbody></table>
+    </section>
+    <section>
+      <h2>Lookback (every rolling window of the horizon)</h2>
+      <p class="muted" id="depth">Press Lookback.</p>
+      <table id="lookback"><thead><tr><th>Outcome</th><th>min</th><th>p10</th><th>median</th><th>p90</th><th>max</th></tr></thead><tbody></tbody></table>
+    </section>
+  </div>
+</main>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
